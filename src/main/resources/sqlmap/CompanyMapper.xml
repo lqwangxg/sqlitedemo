@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbp.lqwangxg.mapper.CompanyMapper">
+  <resultMap id="BaseResultMap" type="com.mbp.lqwangxg.model.Company">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <id column="IDX" jdbcType="INTEGER" property="idx" />
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="AGE" jdbcType="INTEGER" property="age" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="SALARY" jdbcType="FLOAT" property="salary" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    IDX, ID, `NAME`, AGE, ADDRESS, SALARY
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select 
+    <include refid="Base_Column_List" />
+    from COMPANY
+    where IDX = #{idx,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    delete from COMPANY
+    where IDX = #{idx,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Company">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into COMPANY (IDX, ID, `NAME`, 
+      AGE, ADDRESS, SALARY)
+    values (#{idx,jdbcType=INTEGER}, #{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{age,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{salary,jdbcType=FLOAT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Company">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into COMPANY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idx != null">
+        IDX,
+      </if>
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="name != null">
+        `NAME`,
+      </if>
+      <if test="age != null">
+        AGE,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="salary != null">
+        SALARY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idx != null">
+        #{idx,jdbcType=INTEGER},
+      </if>
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="salary != null">
+        #{salary,jdbcType=FLOAT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Company">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update COMPANY
+    <set>
+      <if test="id != null">
+        ID = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `NAME` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        AGE = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="salary != null">
+        SALARY = #{salary,jdbcType=FLOAT},
+      </if>
+    </set>
+    where IDX = #{idx,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Company">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update COMPANY
+    set ID = #{id,jdbcType=VARCHAR},
+      `NAME` = #{name,jdbcType=VARCHAR},
+      AGE = #{age,jdbcType=INTEGER},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      SALARY = #{salary,jdbcType=FLOAT}
+    where IDX = #{idx,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbp.lqwangxg.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.mbp.lqwangxg.model.User">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <id column="IDX" jdbcType="INTEGER" property="idx" />
+    <result column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="PASS" jdbcType="VARCHAR" property="pass" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    IDX, ID, `NAME`, PASS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select 
+    <include refid="Base_Column_List" />
+    from USER
+    where IDX = #{idx,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    delete from USER
+    where IDX = #{idx,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.User">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into USER (IDX, ID, `NAME`, 
+      PASS)
+    values (#{idx,jdbcType=INTEGER}, #{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{pass,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.User">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="idx != null">
+        IDX,
+      </if>
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="name != null">
+        `NAME`,
+      </if>
+      <if test="pass != null">
+        PASS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="idx != null">
+        #{idx,jdbcType=INTEGER},
+      </if>
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="pass != null">
+        #{pass,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.User">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update USER
+    <set>
+      <if test="id != null">
+        ID = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `NAME` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="pass != null">
+        PASS = #{pass,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where IDX = #{idx,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.User">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update USER
+    set ID = #{id,jdbcType=VARCHAR},
+      `NAME` = #{name,jdbcType=VARCHAR},
+      PASS = #{pass,jdbcType=VARCHAR}
+    where IDX = #{idx,jdbcType=INTEGER}
+  </update>
+</mapper>

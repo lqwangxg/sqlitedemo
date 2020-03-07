@@ -4,6 +4,7 @@ import com.mbp.lqwangxg.model.Company;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+
 @Mapper
 public interface CompanyMapper {
     /**

@@ -24,14 +24,14 @@
     delete from USER
     where IDX = #{idx,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.User">
+  <insert id="insert" parameterType="com.mbp.lqwangxg.model.User">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     insert into USER (IDX, ID, `NAME`, 
       PASS)
     values (#{idx,jdbcType=INTEGER}, #{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{pass,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.User">
+  <insert id="insertSelective" parameterType="com.mbp.lqwangxg.model.User">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     insert into USER
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -63,7 +63,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbp.lqwangxg.model.User">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     update USER
     <set>
@@ -79,7 +79,7 @@
     </set>
     where IDX = #{idx,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.User">
+  <update id="updateByPrimaryKey" parameterType="com.mbp.lqwangxg.model.User">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     update USER
     set ID = #{id,jdbcType=VARCHAR},

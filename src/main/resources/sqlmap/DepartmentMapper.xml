@@ -23,14 +23,14 @@
     delete from DEPARTMENT
     where ID = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Department">
+  <insert id="insert" parameterType="com.mbp.lqwangxg.model.Department">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     insert into DEPARTMENT (ID, DEPT, EMP_ID
       )
     values (#{id,jdbcType=INTEGER}, #{dept,jdbcType=VARCHAR}, #{empId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Department">
+  <insert id="insertSelective" parameterType="com.mbp.lqwangxg.model.Department">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     insert into DEPARTMENT
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -56,7 +56,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Department">
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbp.lqwangxg.model.Department">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     update DEPARTMENT
     <set>
@@ -69,7 +69,7 @@
     </set>
     where ID = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Department">
+  <update id="updateByPrimaryKey" parameterType="com.mbp.lqwangxg.model.Department">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     update DEPARTMENT
     set DEPT = #{dept,jdbcType=VARCHAR},

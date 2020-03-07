@@ -26,6 +26,12 @@ public class DemoController {
     @Autowired
     private CompanyMapper companyMapper;
 
+    @RequestMapping("/")
+    @ResponseBody
+    public String greeting() {
+        return "Hello World";
+    }
+
     @GetMapping("/demo")
     public ModelAndView demo() {
         // map to demo.jsp

@@ -26,14 +26,14 @@
     delete from COMPANY
     where IDX = #{idx,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Company">
+  <insert id="insert" parameterType="com.mbp.lqwangxg.model.Company">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     insert into COMPANY (IDX, ID, `NAME`, 
       AGE, ADDRESS, SALARY)
     values (#{idx,jdbcType=INTEGER}, #{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{age,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{salary,jdbcType=FLOAT})
   </insert>
-  <insert id="insertSelective" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Company">
+  <insert id="insertSelective" parameterType="com.mbp.lqwangxg.model.Company">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     insert into COMPANY
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -77,7 +77,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Company">
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbp.lqwangxg.model.Company">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     update COMPANY
     <set>
@@ -99,7 +99,7 @@
     </set>
     where IDX = #{idx,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.mbp.lqwangxg.com.mbp.lqwangxg.model.Company">
+  <update id="updateByPrimaryKey" parameterType="com.mbp.lqwangxg.model.Company">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     update COMPANY
     set ID = #{id,jdbcType=VARCHAR},

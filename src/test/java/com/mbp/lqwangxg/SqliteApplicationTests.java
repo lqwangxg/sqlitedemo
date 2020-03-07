@@ -3,6 +3,7 @@ package com.mbp.lqwangxg;
 import com.mbp.lqwangxg.mapper.CompanyMapper;
 import com.mbp.lqwangxg.model.Company;
 
+import com.mbp.lqwangxg.service.WebDriverService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,7 +29,7 @@ public class SqliteApplicationTests {
 	private MockMvc mockMvc;
 
 	@Autowired
-	private CompanyMapper companyMapper;
+	private WebDriverService webDriverService;
 
 	@BeforeAll
 	public static void testBeforeClass() {
@@ -49,19 +50,6 @@ public class SqliteApplicationTests {
 		log.info("after===============");
 	}
 
-	/*@Test
-	void contextLoads() {
-		Company company = new Company();
-		company.setId("100001");
-		company.setName("lqwangxg");
-		company.setAddress("nagoya");
-		company.setAge(30);
-		int count = companyMapper.insert(company);
-		Assertions.assertEquals(count,1);
-		List<Company> companies = companyMapper.selectAll();
-		Assertions.assertEquals(companies.size(),1);
-	}*/
-
 	@DisplayName("ホームページ初期表示")
 	@Test
 	public void getUser() throws Exception {
@@ -71,5 +59,14 @@ public class SqliteApplicationTests {
 		String content = result.getResponse().getContentAsString();
 		log.info("Response: HttpStatus={},content={}", httpStatus, content);
 		Assertions.assertEquals(httpStatus, HttpStatus.OK.value());
+	}
+	@DisplayName("自動テスト")
+	@Test
+	public void webdriver() throws Exception {
+		webDriverService.createAndStartService();
+		webDriverService.createDriver();
+		webDriverService.testGoogleSearch();
+		webDriverService.quitDriver();
+		webDriverService.stopService();
 	}
 }

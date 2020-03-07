@@ -14,26 +14,34 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.core.env.Environment;
 
 import java.io.File;
 import java.io.IOException;
 
+
 @Slf4j
 @Service
 public class WebDriverService {
-    private static ChromeDriverService service;
+    private ChromeDriverService service;
     private WebDriver driver;
 
-    public static void createAndStartService() throws IOException {
+    @Autowired
+    Environment env;
+
+    public void createAndStartService() throws IOException {
+        String driverPath = env.getProperty("webdriver.path");
+        log.debug("driverPath:{}", driverPath);
         service = new ChromeDriverService.Builder()
-                .usingDriverExecutable(new File("/path/to/chromedriver"))
+                .usingDriverExecutable(new File(driverPath))
                 .usingAnyFreePort()
                 .build();
         service.start();
     }
 
-    public static void stopService() {
+    public void stopService() {
         service.stop();
     }
 

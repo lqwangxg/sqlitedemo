@@ -1,8 +1,5 @@
 package com.mbp.lqwangxg;
 
-import com.mbp.lqwangxg.mapper.CompanyMapper;
-import com.mbp.lqwangxg.model.Company;
-
 import com.mbp.lqwangxg.service.WebDriverService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
@@ -16,9 +13,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
-import java.util.List;
-
 
 @Slf4j
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

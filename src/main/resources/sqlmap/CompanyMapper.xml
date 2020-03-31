@@ -21,6 +21,12 @@
     from COMPANY
     where IDX = #{idx,jdbcType=INTEGER}
   </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select
+    <include refid="Base_Column_List" />
+    from COMPANY
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     delete from COMPANY

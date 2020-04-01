@@ -59,7 +59,6 @@ public class SqliteApplicationTests {
 	public void webdriver() throws Exception {
 		webDriverService.createAndStartService();
 		webDriverService.createDriver();
-		webDriverService.testGoogleSearch();
 		webDriverService.quitDriver();
 		webDriverService.stopService();
 	}

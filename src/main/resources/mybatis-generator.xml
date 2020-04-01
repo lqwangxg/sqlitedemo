@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context defaultModelType="flat" id="mybatis-builder" targetRuntime="MyBatis3">
+    <property name="endingDelimiter" value="`" />
+    <property name="beginningDelimiter" value="`" />
+    <property name="autoDelimitKeywords" value="true" />
+    <property name="javaFileEncoding" value="UTF-8" />
+    <plugin type="com.chuntung.plugin.mybatis.builder.generator.plugins.RenamePlugin">
+      <property name="type" value="com.chuntung.plugin.mybatis.builder.generator.plugins.RenamePlugin" />
+    </plugin>
+    <commentGenerator type="com.chuntung.plugin.mybatis.builder.generator.CustomCommentGenerator">
+      <property name="addDatabaseRemark" value="true" />
+      <property name="generatedComment" value="generated automatically, do not modify!" />
+    </commentGenerator>
+    <jdbcConnection connectionURL="jdbc:sqlite:D:\workspace\sqlite\sqlite.db" driverClass="org.sqlite.JDBC" />
+    <javaTypeResolver>
+      <property name="useJSR310Types" value="false" />
+      <property name="forceBigDecimals" value="true" />
+    </javaTypeResolver>
+    <javaModelGenerator targetPackage="com.mbp.lqwangxg.model" targetProject="D:/workspace/sqlite/src/main/java">
+      <property name="trimStrings" value="true" />
+      <property name="enableSubPackages" value="true" />
+    </javaModelGenerator>
+    <sqlMapGenerator targetPackage="sqlmap" targetProject="D:/workspace/sqlite/src/main/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+    <javaClientGenerator targetPackage="com.mbp.lqwangxg.mapper" targetProject="D:/workspace/sqlite/src/main/java" type="XMLMAPPER">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+    <table domainObjectName="IdName" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" tableName="IDNAME" />
+    <table domainObjectName="Question" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" tableName="QUESTION" />
+    <table domainObjectName="QuestionCase" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" tableName="QUESTION_CASE" />
+    <table domainObjectName="QuestionCaseDesc" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" tableName="QUESTION_CASE_DESC" />
+    <table domainObjectName="QuestionImage" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" tableName="QUESTION_IMAGE" />
+  </context>
+</generatorConfiguration>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mbp.lqwangxg.mapper.QuestionImageMapper">
+  <resultMap id="BaseResultMap" type="com.mbp.lqwangxg.model.QuestionImage">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="QID" jdbcType="INTEGER" property="qid" />
+    <result column="URI" jdbcType="VARCHAR" property="uri" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    ID, QID, URI
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select 
+    <include refid="Base_Column_List" />
+    from QUESTION_IMAGE
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    delete from QUESTION_IMAGE
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mbp.lqwangxg.model.QuestionImage">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into QUESTION_IMAGE (ID, QID, URI)
+    values (#{id,jdbcType=INTEGER}, #{qid,jdbcType=INTEGER}, #{uri,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mbp.lqwangxg.model.QuestionImage">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    insert into QUESTION_IMAGE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="qid != null">
+        QID,
+      </if>
+      <if test="uri != null">
+        URI,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="qid != null">
+        #{qid,jdbcType=INTEGER},
+      </if>
+      <if test="uri != null">
+        #{uri,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mbp.lqwangxg.model.QuestionImage">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update QUESTION_IMAGE
+    <set>
+      <if test="qid != null">
+        QID = #{qid,jdbcType=INTEGER},
+      </if>
+      <if test="uri != null">
+        URI = #{uri,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mbp.lqwangxg.model.QuestionImage">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update QUESTION_IMAGE
+    set QID = #{qid,jdbcType=INTEGER},
+      URI = #{uri,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

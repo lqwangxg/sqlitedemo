@@ -30,7 +30,9 @@ public class WebDriverService {
 
     @Autowired
     Environment env;
-
+    public WebDriver getDriver(){
+        return driver;
+    }
     public void createAndStartService() throws IOException {
         String driverPath = env.getProperty("webdriver.path");
         log.debug("driverPath:{}", driverPath);
@@ -53,8 +55,8 @@ public class WebDriverService {
         driver.quit();
     }
 
-    public void testGoogleSearch() {
-        driver.get("http://www.google.com");
+    public void open(String Url) {
+        driver.get(Url);
         // rest of the test...
     }
 }

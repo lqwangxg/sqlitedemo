@@ -1,8 +1,12 @@
 package com.mbp.lqwangxg.model;
 
+import lombok.ToString;
+
+
 /**
  * Table: USER
  */
+@ToString
 public class User {
     /**
      * Column: IDX

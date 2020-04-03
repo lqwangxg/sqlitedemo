@@ -19,6 +19,14 @@
     from USER
     where IDX = #{idx,jdbcType=INTEGER}
   </select>
+  <select id="getUser" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select
+    <include refid="Base_Column_List" />
+    from USER
+    where ID = #{id,jdbcType=VARCHAR} AND PASS = #{pass,jdbcType=VARCHAR}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     delete from USER

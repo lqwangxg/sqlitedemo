@@ -13,20 +13,19 @@ import com.mbp.lqwangxg.mapper.CompanyMapper;
 import com.mbp.lqwangxg.model.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @Controller
 public class DemoController {
 
     @Autowired
     private CompanyMapper companyMapper;
 
-    @RequestMapping("/")
+    @RequestMapping(name="say hello world.",value="/", method = RequestMethod.GET)
     @ResponseBody
     public String greeting() {
         return "Hello World";
